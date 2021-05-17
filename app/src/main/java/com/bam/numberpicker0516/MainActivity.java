@@ -2,6 +2,7 @@ package com.bam.numberpicker0516;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,10 @@ public class MainActivity extends AppCompatActivity {
 
     Button button;
     TextView textView;
+
+    //DateDialog myDialog;
+    Button ok,cancel;
+    View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +30,31 @@ public class MainActivity extends AppCompatActivity {
     public void onclick(View view){
         DateDialog myDialog = new DateDialog(this, System.currentTimeMillis());
         myDialog.show();
+        //getDialog();
     }
+/*
+    private void getDialog(){
+        myDialog = new DateDialog(MainActivity.this,System.currentTimeMillis());
+        view = getLayoutInflater().inflate(R.layout.fragment_test, null);
+        myDialog.setContentView(view);
+        ok = view.findViewById(R.id.button4);
+        cancel = view.findViewById(R.id.button3);
+        myDialog.show();
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog.showdate();
+                myDialog.dismiss();
+            }
+        });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog.dismiss();
+            }
+        });
+    }*/
+
 
 
 }
