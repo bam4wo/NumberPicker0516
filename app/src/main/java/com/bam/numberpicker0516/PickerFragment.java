@@ -35,22 +35,20 @@ public class PickerFragment extends FrameLayout {
         yearPicker.setValue(1960);
         yearPicker.setOnValueChangedListener(onYearChangeListener);
 
-
         //月份
         monthPicker = findViewById(R.id.np_month);
         monthPicker.setMaxValue(12);
         monthPicker.setMinValue(1);
         monthPicker.setValue(1);
-        monthPicker.setFormatter(formatter);
+        //monthPicker.setFormatter(formatter);
         monthPicker.setOnValueChangedListener(onMonthChangeListener);
-
 
         //日期
         dayPicker = findViewById(R.id.np_day);
         judgeMonth();
         mday = calendar.get(Calendar.DAY_OF_MONTH);
         dayPicker.setValue(1);
-        dayPicker.setFormatter(formatter);
+        //dayPicker.setFormatter(formatter);
         dayPicker.setOnValueChangedListener(onDayChangeListener);
 
     }
@@ -81,7 +79,7 @@ public class PickerFragment extends FrameLayout {
         }
     };
 
-
+    //數字格式化，小於10的前面加0
     private NumberPicker.Formatter formatter = new NumberPicker.Formatter() {
         @Override
         public String format(int value) {
@@ -93,10 +91,12 @@ public class PickerFragment extends FrameLayout {
         }
     };
 
+    //接口回調
     public interface OnDateTimeChangedListener {
         void onDateTimeChanged(PickerFragment view, int year, int month, int day);
     }
 
+    //對外公開的方法
     public void setOnDateTimeChangedListener(OnDateTimeChangedListener callback) {
         mOnDateTimeChangedListener = callback;
     }
@@ -107,7 +107,7 @@ public class PickerFragment extends FrameLayout {
         }
     }
 
-
+    //判斷閏年
     private void judgeYear() {
         if(mmonth == 2){
             if(myear%4 == 0){
