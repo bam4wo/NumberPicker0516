@@ -16,7 +16,7 @@ public class DateDialog extends AlertDialog implements DialogInterface.OnClickLi
     private Calendar calendar = Calendar.getInstance();
     int Year, Month, Day;
     private OnDateTimeSetListener mOnDateTimeSetListener;
-    Button ok, cancel;
+    Button confirm, cancel;
     TextView textView;
     private String datetimeStr;
 
@@ -36,6 +36,21 @@ public class DateDialog extends AlertDialog implements DialogInterface.OnClickLi
         Year = calendar.get(Calendar.YEAR);
         Month = calendar.get(Calendar.MONTH) + 1;
         Day = calendar.get(Calendar.DAY_OF_MONTH);
+        /*
+        setButton(DialogInterface.BUTTON_POSITIVE,"确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+                datetimeStr = Year +"-"+ Month +"-"+ Day ;
+                if (mOnDateTimeSetListener != null) {
+                    mOnDateTimeSetListener.OnDateTimeSet(dialog, datetimeStr);
+                }
+            }
+        });
+        setButton(DialogInterface.BUTTON_NEGATIVE,"取消", (OnClickListener) null);
+        setCanceledOnTouchOutside(false);//点击对话框外无法关闭对话框*/
+
+
 
     }
 

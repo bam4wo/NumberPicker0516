@@ -1,17 +1,13 @@
 package com.bam.numberpicker0516;
 
 import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.NumberPicker;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import java.util.Calendar;
-import java.util.Formatter;
 
 public class PickerFragment extends FrameLayout {
 
@@ -30,7 +26,7 @@ public class PickerFragment extends FrameLayout {
         mmonth = calendar.get(Calendar.MONTH);
 
         inflate(context,R.layout.fragment_test,this);
-        button = findViewById(R.id.button4);
+        button = findViewById(R.id.bt_confirm);
 
         //年份
         yearPicker = findViewById(R.id.np_year);

@@ -3,6 +3,7 @@ package com.bam.numberpicker0516;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
     public void onclick(View view){
         DateDialog myDialog = new DateDialog(this, System.currentTimeMillis());
         myDialog.show();
+        myDialog.setOnDateTimeSetListener(new DateDialog.OnDateTimeSetListener() {
+            @Override
+            public void OnDateTimeSet(DialogInterface dialog, String datetimestr) {
+                textView.setText(datetimestr);
+            }
+        });
         //getDialog();
     }
 /*
